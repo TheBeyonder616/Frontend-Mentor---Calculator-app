@@ -1,0 +1,103 @@
+@use "../abstract/mixin" as *;
+
+// !=============={Theme
+.theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  //!=====================[Wrapper]
+  &__wrapper {
+    display: flex;
+    min-width: 45%;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  //!=====================[Container]
+  &__container {
+    --_left: 0%;
+    display: grid;
+    width: 50%;
+
+    &:has(.radio-input.theme--primary:checked) .theme__toggle::before {
+      align-self: center;
+      --_left: 0%;
+    }
+
+    &:has(.radio-input.theme--secondary:checked) .theme__toggle::before {
+      align-self: center;
+      --_left: calc(100% / 2.5);
+    }
+
+    &:has(.radio-input.theme--tertiary:checked) .theme__toggle::before {
+      align-self: center;
+      --_left: calc((100% / 2.5) * 2);
+    }
+  }
+
+  //!=====================[Input]
+  &__input {
+    padding-inline: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //!=====================[togo]
+
+  &__toggle-container {
+    border: 1px solid transparent;
+    border-radius: 20rem;
+    padding-inline: 0.5rem;
+    background-color: var(--color-primary-light);
+    @include insetShadow(0.1);
+    position: relative;
+  }
+
+  &__toggle {
+    width: 100%;
+    aspect-ratio: 6/1.8;
+    border-radius: 20rem;
+    position: relative;
+    display: flex;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 23%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: var(--color-tertiary-light);
+      left: var(--_left);
+      top: 50%;
+      transform: translateY(-50%);
+      @include insetShadow(1);
+      transition: left 1s ease, background-color 0.35s ease;
+    }
+  }
+}
+
+.radio-label {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    top: -50%;
+    transform: translateY(180%) translateX(-15%);
+    min-width: 2rem;
+    background-color: transparent;
+    z-index: 100;
+  }
+
+  &:has(.radio-input:checked) {
+    cursor: not-allowed;
+  }
+}
+
+.radio-input {
+  display: none;
+}

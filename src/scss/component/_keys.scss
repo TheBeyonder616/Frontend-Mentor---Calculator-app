@@ -1,0 +1,58 @@
+@use "../abstract/mixin" as *;
+
+.btn {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  text-align: center;
+  font-weight: var(--fnt-weight-bold);
+  line-height: 1;
+  transition: transform 0.5s ease,
+    box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 0.5s ease-in-out,
+    outline 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:focus-visible {
+    outline: 1px solid var(--color-tertiary-light);
+    border: 1px solid rgb(var(--black));
+  }
+
+  &:active {
+    transform: translateY(0.6rem);
+  }
+
+  &.btn--active {
+    transform: translateY(0.6rem);
+  }
+
+  &.btn--primary {
+    background-color: var(--color-neutral-light);
+    @include button-shadow(var(--color-neutral-shadow), 0.2);
+    color: var(--color-text-primary);
+    @include font-size(1.1);
+  }
+
+  &.btn--delete,
+  &.btn--reset {
+    text-transform: uppercase;
+    background-color: var(--color-secondary-light);
+    @include button-shadow(var(--color-secondary-shadow), 0.3);
+    color: var(--color-white);
+    @include font-size(0.7);
+  }
+
+  &.btn--reset {
+    grid-column: span 2;
+    margin-block-start: 0.5rem;
+  }
+
+  &.btn--total {
+    grid-column: span 2;
+    background-color: var(--color-tertiary-light);
+    @include button-shadow(var(--color-tertiary-shadow), 0.4);
+    margin-block-start: 0.5rem;
+    @include font-size();
+    color: var(--color-text-tertiary);
+  }
+}

@@ -1,0 +1,76 @@
+@use "sass:math";
+
+@mixin gradient($start, $end, $isRadial: false, $direction: to bottom) {
+  @if $isRadial == true {
+    background-image: radial-gradient($direction, $start, $end);
+  } @else {
+    background-image: linear-gradient($direction, $start, $end);
+  }
+}
+
+$mobileMid: 25em; // 400px
+$mobileLg: 30em; // 480px
+$tablet: 48em; // 768px
+$tabletLarge: 60em; // 960px
+$desktop: 64em; // 1024px
+$largeDesktop: 80em; // 1280px
+$wideDesktop: 120em; // 1920px
+
+//prettier-ignore
+@mixin insetShadow($opacity: 0.1, $white: false, $x-offset: -0.2rem, $y-offset: -0.4rem, $blur: 0.8rem) {
+  @if $opacity < 0 or $opacity > 1 {
+    @warn "Opacity should be between 0 and 1. Defaulting to 0.5.";
+    $opacity: 0.1;
+  }
+  
+  @if $white == true {
+    box-shadow: inset #{$x-offset} #{$y-offset} #{$blur} rgb(var(--white) / #{$opacity});
+  } @else {
+    box-shadow: inset #{$x-offset} #{$y-offset} #{$blur} rgb(var(--black) / #{$opacity});
+  }
+}
+//prettier-ignore
+@mixin shadow($opacity: 0.1, $white: false, $x-offset: 0.2rem, $y-offset: 0.4rem, $blur: 0.8rem) {
+  @if $opacity < 0 or $opacity > 1 {
+    @warn "Opacity should be between 0 and 1. Defaulting to 0.5.";
+    $opacity: 0.1;
+  }
+  
+  @if $white == true {
+    box-shadow:  #{$x-offset} #{$y-offset} #{$blur} rgb(var(--white) / #{$opacity});
+  } @else {
+    box-shadow:  #{$x-offset} #{$y-offset} #{$blur} rgb(var(--black) / #{$opacity});
+  }
+}
+
+@mixin font-size($scale: 1) {
+  @if $scale <= 0 {
+    @warn "The scale value must be positive and greater than 0. Using 1 as a fallback.";
+    $scale: 1;
+  }
+
+  font-size: calc(var(--fnt-size) * #{$scale});
+}
+
+@mixin media($width: 64em, $base-font-size: 16px) {
+  $em-width: if(
+    math.div($width, $base-font-size) == "px",
+    math.div($width, $base-font-size),
+    $width
+  );
+
+  @media only screen and (min-width: $em-width) {
+    @content;
+  }
+}
+
+@mixin button-shadow(
+  $color: var(--color-neutral-shadow),
+  $opacity: 0.3,
+  $black: var(--black)
+) {
+  box-shadow: 0rem 0.4rem rgb($color / $opacity),
+    0.4rem 0rem rgb($color / $opacity),
+    inset 0rem -0.4rem rgb($black / $opacity),
+    inset 0.4rem 0rem rgb($color / $opacity);
+}

@@ -1,0 +1,43 @@
+@use "../abstract/mixin" as *;
+
+.screen {
+  background-color: var(--color-primary-dark);
+  width: 100%;
+  aspect-ratio: 5/1;
+  border-radius: 1rem;
+  @include insetShadow(0.3);
+  cursor: not-allowed;
+  transition: background-color 0.35s ease;
+
+  &__value {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-inline: 1.5rem;
+  }
+
+  .screen--top-container {
+    width: 100%;
+    height: calc(100% - 59%);
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      top: 100%;
+      position: absolute;
+      height: 0.6px;
+      background-color: var(--color-tertiary-light);
+      margin-inline: auto;
+      transform: translate(1.5rem);
+      opacity: 0.3;
+      @include insetShadow(0.1);
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  .screen--bottom-container {
+    width: 100%;
+    height: 59%;
+  }
+}

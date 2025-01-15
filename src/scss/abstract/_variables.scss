@@ -1,0 +1,76 @@
+:root {
+  //*!===================[Color: Default Theme]================ *//
+  //?[Background]
+  --color-primary: rgb(58 71 100); //Background
+  --color-primary-light: rgb(35 44 67); //toggle background keypad background
+  --color-primary-dark: rgb(24 32 52); //screen background
+  //?[Keys]
+  --color-secondary-light: rgb(99 112 151); //key background
+  --color-secondary-dark: rgb(64 78 114); //key shadow
+  --color-secondary-shadow: 64 78 114;
+  --color-tertiary-light: rgb(208 63 47); //key background toggle
+  --color-tertiary-dark: rgb(147 38 26); //key shadow
+  --color-tertiary-shadow: 147 38 26;
+  --color-neutral-light: rgb(234 227 220); //key background
+  --color-neutral-dark: rgb(180 165 151); //key shadow
+  --color-neutral-shadow: 180 165 151;
+  //?[Text]
+  --color-text-primary: rgb(68 75 90);
+  --color-text-secondary: var(--color-white);
+  --color-text-tertiary: var(--color-white);
+  --color-white: rgb(255 255 255);
+
+  //?[Utility Color]
+  --black: 0 0 0;
+  --white: 255 255 255;
+
+  //!===================================[font-]
+  --fnt-family: "League Spartan";
+  --fnt-size: clamp(2.5rem, 3vw, 3.2rem);
+  --fnt-weight-bold: 700;
+}
+
+.theme--secondary {
+  //*!===================[Color: Secondary Theme]================ *//
+  //?[Background]
+  --color-primary: rgb(230 230 230);
+  --color-primary-light: rgb(209 204 204);
+  --color-primary-dark: rgb(237 237 237);
+  //?[Key]
+  --color-secondary-light: rgb(55 127 134);
+  --color-secondary-dark: rgb(27 95 101);
+  --color-secondary-shadow: 27 95 101;
+  --color-tertiary-light: rgb(202 85 2);
+  --color-tertiary-dark: rgb(137 57 1);
+  --color-tertiary-shadow: 137 57 1;
+  --color-neutral-light: rgb(229 228 225);
+  --color-neutral-dark: rgb(166 157 145);
+  --color-neutral-shadow: 166 157 145;
+  //?[Text]
+  --color-text-primary: rgb(53 53 44);
+  --color-text-secondary: var(--color-text-primary);
+  --color-text-tertiary: var(--color-white);
+}
+
+.theme--tertiary {
+  //*!===================[Color: Tertiary Theme]================ *//
+  //?[Background]
+  --color-primary: rgb(22 6 40);
+  --color-primary-light: rgb(29 9 52);
+  --color-primary-dark: rgb(29 9 52);
+  //?[Key]
+  --color-secondary-light: rgb(88 7 125);
+  --color-secondary-dark: rgb(188 21 244);
+  --color-secondary-shadow: 188 21 244;
+  --color-tertiary-light: rgb(0 224 209);
+  --color-tertiary-dark: rgb(108 249 242);
+  --color-tertiary-shadow: 108 249 242;
+  --color-neutral-light: hsl(268 47% 21%);
+  --color-neutral-dark: rgb(135 28 156);
+  --color-neutral-shadow: 135 28 156;
+
+  //?[Text]
+  --color-text-primary: rgb(255 229 61);
+  --color-text-secondary: var(--color-text-primary);
+  --color-text-tertiary: rgb(27 36 40);
+}

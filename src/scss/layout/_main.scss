@@ -1,0 +1,37 @@
+@use "../abstract/mixin" as *;
+
+.calculator {
+  width: clamp(28rem, 90%, 45rem);
+  aspect-ratio: 0.8;
+  align-self: center;
+  margin-inline: auto;
+  position: relative;
+  margin-block: 5rem;
+  @include media($tablet) {
+    aspect-ratio: 1;
+  }
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-primary-light);
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  margin-block-start: 2rem;
+  border-radius: 1rem;
+  @include insetShadow(0.1);
+
+  &__keys {
+    border: 1px solid transparent;
+    @include insetShadow(0.2);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}

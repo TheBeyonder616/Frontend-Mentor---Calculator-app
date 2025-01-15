@@ -1,0 +1,73 @@
+@use "../abstract/mixin" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scrollbar-width: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:visited,
+a:link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  vertical-align: baseline;
+}
+
+body {
+  font-family: var(--fnt-family);
+  background-color: var(--color-primary);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+}
+
+@supports (min-height: 100svh) {
+  #root {
+    min-height: 100svh;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-tertiary-light);
+  border-radius: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary-light);
+  border-radius: 0.25rem;
+}

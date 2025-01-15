@@ -1,0 +1,53 @@
+@use "../abstract/mixin" as *;
+
+.heading-primary {
+  color: var(--color-text-secondary);
+  @include font-size(1);
+  font-weight: var(--fnt-weight-bold);
+  transition: color 0.35s ease;
+}
+
+.heading-secondary {
+  @include font-size(0.55);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: color 0.35s ease;
+  //!==================[Label]
+  &.heading--label {
+    transition: transform 0.35s ease;
+    padding-inline: 0.5rem;
+    padding-block: 0.1rem;
+
+    &:active {
+      transform: translateY(0.2rem);
+    }
+
+    &.label--active {
+      transform: translateY(0.2rem);
+    }
+
+    &:focus {
+      outline: 1px solid var(--color-tertiary-light);
+    }
+  }
+
+  //!==================[Bottom]
+  &.heading--screen {
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+
+  &.screen--bottom {
+    @include font-size(1.5);
+  }
+  &.screen--top {
+    @include font-size(0.7);
+  }
+}
