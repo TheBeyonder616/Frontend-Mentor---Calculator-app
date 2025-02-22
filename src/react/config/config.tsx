@@ -44,3 +44,7 @@ export type LocalstorageType = {
   className: string;
   checked: string;
 } | null;
+
+
+
+export type OperandType = "numeric" | "function" | "symbol";

@@ -5,6 +5,7 @@ export default class Method {
   public static operationString(string: string): string[] {
     return string.trim().split(" ");
   }
+
   public static hasMinusAndDot(string: string): boolean {
     const reg = /[-.]/;
     return reg.test(string);

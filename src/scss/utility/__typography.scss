@@ -41,6 +41,9 @@
     overflow: hidden;
     white-space: nowrap;
     text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
     text-overflow: ellipsis;
   }
 
