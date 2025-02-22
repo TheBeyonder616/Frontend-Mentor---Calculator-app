@@ -80,7 +80,6 @@ const useCalculator = () => {
   };
 
   //!================================================[Calculation]
-
   /**
    * ?Performs the calculation based on the current operand using mathjs evaluate.
    *

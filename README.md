@@ -93,7 +93,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Calculator App Screenshot](./screenshot.png)
+![Mobile](./public/design/)
+![Desktop](./public/design/Desktop.png)
 
 ### Links
 
