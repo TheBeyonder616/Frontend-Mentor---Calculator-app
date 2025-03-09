@@ -31,11 +31,6 @@ Users should be able to:
 ![Desktop](./public/design/Desktop.png)
 ![Mobile](./public/design/Mobile.png)
 
-### Links
-
-- Solution URL: [Add your solution URL here](#)
-- Live Site URL: [Add your live site URL here](#)
-
 ### Built With
 
 - Semantic HTML5 markup
